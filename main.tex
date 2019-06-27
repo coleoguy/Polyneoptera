@@ -1,0 +1,88 @@
+\documentclass[12pt]{article}
+\usepackage{evolution}
+\usepackage{multirow}
+%Evolution
+
+\begin{document}
+
+\linenumbers
+
+%--------------------------------------------------
+% Title page
+%--------------------------------------------------
+
+\begin{center}
+\textbf{TITLE}
+\end{center}
+
+\vfill
+\noindent
+\textit{Running title:} short title
+
+
+\vfill
+\noindent
+Terrence Sylvester,
+\endnote{Department of Biology; Texas A\&M University; College Station, TX 77843, USA}
+%
+\noindent
+and
+Heath Blackmon,$^1$
+\vfill
+
+%--------------------------------------------------
+% Abstract, Keywords
+%--------------------------------------------------
+
+\theendnotes
+\noindent
+Author for correspondence: HB, \textit{coleoguy@gmail.com}
+\vfill
+
+\clearpage
+
+\input{abstract} 
+\bigskip
+\noindent
+\textit{Keywords: }
+
+%--------------------------------------------------
+% Main text
+%--------------------------------------------------
+
+\clearpage
+\input{intro}
+\input{methods}
+\input{results}
+\input{discussion}
+
+\section{Acknowledgements}
+
+
+
+
+\section{Data Accessibility}
+
+
+
+
+%--------------------------------------------------
+% References
+%--------------------------------------------------
+
+\clearpage
+\bibliography{refs}
+\bibliographystyle{evolution}
+
+%--------------------------------------------------
+% Figures, Tables, Supplemental
+%--------------------------------------------------
+
+\nolinenumbers
+\clearpage
+\input{figures.tex}
+% \input{tables}
+\clearpage
+\input{supplemental}
+
+\end{document}
