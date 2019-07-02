@@ -26,11 +26,25 @@ This pattern is not expected if fussions are the primary source of transitions f
 We find that the ancestral state for sex chromosome system in polyneoptera clade was XO with a probability of 90.3\%.
 Similarly, the most probable ancestral state for of each order was also XO, with the exception of Isoptera and Dermaptera where XY is more probable.
 (\cref{fig:sex.asr.plot}).
-We find that the transition rates from XO to XY and XO to XY to be roughly equal with etimated rates being 0.00202 and 0.00200 respectively. % HB say something about rates 
-Analysis of stochastic mappings show that on average 15.27 XO to XY transitions are seen along the tree while on average 6.72 XY to XO transitions are seen . %HB do stochastic mapping 
+We find that the credible interval of the transition rates from XO to XY and XY to XO to be largely overlapping with means of 0.00202 and 0.00200 respectively. 
+To assess the number of transitions between XY and XO we calculated the number of transitions from 100 stochastic maps for each of the 100 trees from the posterior sample.
+Transitions from XO to XY were more common (mean = 15.3) while transitions from XY to XO were relatively rare (mean = 6.7).
 
 \subsection{Karyotype variation}
 We find a significant difference in variance in chromosome numbers among orders of Polyneoptera (Levene's test \textit{p}-value : 2.2e-16). %HB do posthocs
+
+In our dataset, order Blattodea, having 172 records for chromosome number, had a highest variance in chromosome number (variance = 39.32) and order Embiidina, having only eight records for chromosome number, had the lowest variance in chromosome number (variance = 0.41).
+
+Orthoptera, despite having 284 records for chromosome number, had a considerably low variance in chromosome number (variance = 1.39). 
+
+When we compare variances of chromosome number between orders, we do find significant differences between some orders for the variance in chromosome number. 
+
+When compared with Blattodea, we find that the variance in the chromosome number is significantly difference in the orders, Embidiina, Mantodea, Orthoptera, Phasmatodea, Plecoptera. 
+
+When compared with Dermaptera, we find that the variance in chromosome number is significantly difference in the orders Mantodea and Orthoptera. 
+
+When compared with Orhoptera, we find that chromosome number is significantly difference in phsamtaodea.
+
 % On the other hand, Othoptera, which has the vast majority of the records in our dataset, had very little variation in chromosome number. In fact, 65\% of the order Orthoptera had 12 as the haploid chromosome number and 20\% had 11 as the haploid chromosome count. % probably add back into explain the posthoc results.
 Much of these differences in variance are obvious when looking at the much smaller phylogenetic dataset in \cref{fig:phyloplot}.
 
@@ -40,50 +54,33 @@ Though these differences in variance suggest some orders are evolving more quick
 We began with a base model that allows for fusions and fissions and compared this via a likelihood ratio test with a model that included polyploidy as well.
 We found that 77.6\% of our likelihood ratio tests supported an important role for polyploidy.
 For this reason all analyses were done with a model that had fusions, fissions, and polyploidy.
-
-% for each of these write sentence report mean of each parameter
-In Blattodea we estimate a mean fusion rate of 0.128, a fission rate of 0.15, and a polyploidy rate of 0.003 (\cref{tab:HPD}).
-
-In contrast if we remove isoptera from blattodea then we find all three parameters to have higher rate estimates with a mean fusion rate of 0.42, a fission rate of 0.385, and a polyploidy rate of 0.004.
-
-On the other hand, Isoptera by itself have lower rates that Blattodea, with a mean fusion rate of 0.044, a fission rate of 0.063 and a polyploidy rate of 0.003.
-
+% make all rates 3 digits after decimal
+In Blattodea we estimate a mean fusion rate of 0.128, a fission rate of 0.150, and a polyploidy rate of 0.003 (\cref{tab:HPD}).
+In contrast if we remove the subclade Isoptera from Blattodea then we find that parameter estimates increase to 0.420, 0.385, and 0.004 for fusions, fissions and polyploidy respectively.
+This is consistent with rate estimates on Isoptera in isolation, where we infer a mean fusion rate of 0.044, a fission rate of 0.063 and a polyploidy rate of 0.003.
 In Mantodea we estimate a mean fusion rate of 0.142, a fission rate of 0.056, and a polyploidy rate of 0.139.
-
+Mantodea rate estimates also exhibited high uncertainty overlapping rate estimates in most orders for most parameters \cref{fig:rates}.
 In Phasmatodea we estimate a mean fusion rate of 0.47, a fission rate of 0.145, and a polyploidy rate of 0.039.
-
-The lowest rates we estimated were in Othoptera where the fusion rate was 0.003 and the fission rate was 0.024. However we do find the polyploidy rate to be high with a mean rate of 0.101.
-
-
-% other option talk about all fission, all fusions, all polyploidy...
-% you decide
-
-(\cref{fig:rates}). 
+The lowest rates we estimated were in Orthoptera where the fusion rate was 0.003 and the fission rate was 0.024. However we do find the polyploidy rate to be high with a mean rate of 0.101.
 
 \input{table3.tex}
 
 \subsection{Ancestral state reconstruction}
-Our analysis of Orthoptera suggests six is the most probable chromosome number, with a 75.1\% probability, for the most recent common ancestor of taxa in our analysis.
-
-However, a chromosome number of three is also given a high probability on some ancestral state reconstructions suggesting that at least some phylogenies support an early whole genome duplication in this clade.
-
-However, this ancestral whole genome duplication was supported only in 24.5\% of the sampled trees (\cref{fig:asr}). 
-
+In reporting ancestral chromosome number in each order we averaged probabilities across all 100 trees from the posterior distribution. 
+Our analysis of Orthoptera suggests six is the most probable ancestral state for the order, with a 75.1\% probability.
+However, a chromosome number of three is given a probability of 24.5\% which may suggest an early whole genome duplication in this clade.
+Support for the lower ancestral state was concentrated in 19 trees where the most probable state was 3 in all other trees 6 was given the highest probability (\cref{fig:asr}). 
 In Blattodea, the most probable chromosome number was 13 with a probability of 20.9\% followed by 14 and 12 with probabilities 19.5\% and 16.4\% respectively. 
-
 In Blattodea without Isoptera, the most probable chromosome number was 7 with a probability of 11.9\% followed by 8 and 9 with probabilities 11.6\% and 11.2\% respectively.
-
-In Isoptera, the most probable chromosome number was 20 with a probability of 35.6\% followed by 21 and 22 with probabilities 30.7\% and 14\% respectively.
-
+In Isoptera, the most probable chromosome number was 20 with a probability of 35.6\% followed by 21 and 22 with probabilities 30.7\% and 14.0\% respectively.
 In Mantodea, the most probable chromosome number was 8 with a probability of 41.2\% followed by 9 and 7 with probabilities 19.2\% and 16.1\% respectively.
-
-and in Phasmatodea, the most probable chromosome number was 9 with a probability of 11.7\% followed by 10 and 11 with probabilities 11.3\% and 10.7\% respectively.
+Finally, in Phasmatodea, the most probable chromosome number was 9 with a probability of 11.7\% followed by 10 and 11 with probabilities 11.3\% and 10.7\% respectively.
 
 \subsection{Mode of reproduction and chromosome rates}
-In our dataset, we find 13 species which are parthenogenesis. 
-All these species were seen in the clade Phasmatodea.
+In our dataset, we find 13 species which are parthenogenetic. 
+All these species were within Phasmatodea.
 Therefore we tested whether the mode of reproduction is associated with chromosome number evolution. 
-For this purpose we redoubled our efforts to increase the number of species for this clade and inferred a second phylogeny (figure of Phasmatodea phylogeny).
+For this purpose we redoubled our efforts to increase the number of species for this clade and inferred a second phylogeny % make a supp figure with states and chromsomes numbers (figure of Phasmatodea phylogeny).
 This increased our samples from 28, which we had in Polyneoptera data set, to 41 species. 
-In this analysis, we found that there is no significant difference in the rates chromosome fusion and fission between sexually and asexually reproducing species.
-However, we find that rates of polyploidy is significantly high in asexually reproducing species than in sexually reproducing species (\cref{fig:phas.plot}).
+We found that there is no significant difference in the rates chromosome fusion and fission between sexually and asexually reproducing species.
+However, we find that rates of polyploidy is significantly higher in asexually reproducing species than in sexually reproducing species (\cref{fig:phas.plot}).

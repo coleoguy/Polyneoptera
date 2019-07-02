@@ -20,7 +20,7 @@ For each of these genus level matches we retained the longest sequence for each 
 This process of maximizing overlap between the two data sets created 57 exemplar taxa (genera tips).
 
 We used MAFFT under default settings to align all sequences \citep{katoh2013mafft}.
-For the aligned RNA coding sequences, we used GBLOCKS to remove hyper variable regions \citep{castresana2000gblocks}. %HB say which type of alignment option you picked
+For the aligned RNA coding sequences, we used GBLOCKS to remove hyper variable regions \citep{castresana2000gblocks}. 
 When running GBLOCKS we used default settings with the exception of the allowed gap positions argument which was set to maximum. 
 For 18S sequence cluster we also set the minimum block length to 6 to retain a greater proportion of the alignment. 
 For the protein coding genes, We manually adjusted starting position of the alignments to maintain the reading frame. 
@@ -55,6 +55,8 @@ Inspection of the parameter estimates revealed that our MCMC runs converged by 5
 We conservatively discarded the initial 25\% (250 states) as burn-in and randomly sampled 100 states from the post-burn-in portion of the run. 
 This process yielded 10,000 point estimates that define the posterior distribution of the parameters in our model.
 We tested for differences in rates of chromosome evolution at the Order level by comparing the 95\% credible interval of the posterior distribution for each parameter in our model.
+Rates were inferred with branch lengths transformed to make trees unit length.
+However, all rates reported have been back transformed so they represents transition rates in units of millions of years.
 
 \subsection{Ancestral state reconstructions}
 We estimated the ancestral states of the chromosome number at the root of the four orders using ChromEvol version 2.0. \citep{glick2014chromevol, mayrose2009chromevol}.
@@ -64,7 +66,7 @@ For each tree from our posterior distribution, we took the mean of each paramete
 We integrated the estimates from the analysis of all 100 trees for each order to generate an ancestral state estimate that accounts for uncertainty in phylogeny. 
 
 The estimate of ancestral states for sex chromosome systems was done using a Markov model in the function ACE in the R package APE \citep{Paradis2018}.
-We classified multi-XY sex chromosome system as XY which resulted in two states (XO and XY) for the ancestral states reconstruction of the sex chromosome system. %HB get the count of multiXY on tree and lets discuss.
+We classified multi-XY sex chromosome system as XY which resulted in two states (XO and XY) for the ancestral states reconstruction of the sex chromosome system. 
 Our model allowed for transitions between X0 and XY to occur at unequal rates.
 To estimate the number of transitions in sex chromosome systems we created the same model and performed stochastic mappings in the R package phytools \citep{revell2012phytools}.
 Data and all R code for analyses are provided in a GitHub repository: XXXXXX. %HB create a repo with all of this in it.
