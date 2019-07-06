@@ -19,8 +19,6 @@ Examining the distribution of chromosome number among all species in each order 
 For instance, the mean of all XY species in both Blattodea and Dermaptera is higher than the mean of XO species in both orders.
 This pattern is not expected if fussions are the primary source of transitions from XO to XY \cref{fig:order.plots}.
 
-\input{table1.tex}
-
 \subsubsection{Ancestral states and rates of sex chromosome evolution}
 
 We find that the ancestral state for SCS in polyneoptera clade was XO with a probability of 90.3\%.
@@ -32,21 +30,12 @@ Transitions from XO to XY were more common (mean = 15.3) while transitions from 
 
 \subsection{Karyotype variation}
 We find a significant difference in variance in chromosome numbers among orders of Polyneoptera (Levene's test \textit{p}-value : 2.2e-16). %HB do posthocs
-
-In our dataset, order Blattodea, having 172 records for chromosome number, had a highest variance in chromosome number (variance = 39.32) and order Embiidina, having only eight records for chromosome number, had the lowest variance in chromosome number (variance = 0.41).
-
-Orthoptera, despite having 284 records for chromosome number, had a considerably low variance in chromosome number (variance = 1.39). 
-
-When we compare variances of chromosome number between orders, we do find significant differences between some orders for the variance in chromosome number. 
-
-When compared with Blattodea, we find that the variance in the chromosome number is significantly difference in the orders, Embidiina, Mantodea, Orthoptera, Phasmatodea, Plecoptera. 
-
-When compared with Dermaptera, we find that the variance in chromosome number is significantly difference in the orders Mantodea and Orthoptera. 
-
-When compared with Orhoptera, we find that chromosome number is significantly difference in phsamtaodea.
-
-% On the other hand, Othoptera, which has the vast majority of the records in our dataset, had very little variation in chromosome number. In fact, 65\% of the order Orthoptera had 12 as the haploid chromosome number and 20\% had 11 as the haploid chromosome count. % probably add back into explain the posthoc results.
-Much of these differences in variance are obvious when looking at the much smaller phylogenetic dataset in \cref{fig:phyloplot}.
+In our dataset, order Blattodea, having 172 records for chromosome number, had the highest variance in chromosome number (variance = 39.32) and order Embiidina, having only eight records for chromosome number, had the lowest variance in chromosome number (variance = 0.41).
+Orthoptera, despite having 284 records for chromosome number, had a low variance in chromosome number (variance = 1.39). 
+Posthoc tests show that Blattodea has higher variance in chromosome number than Embidiina, Mantodea, Orthoptera, Phasmatodea, Plecoptera (p-values < 0.05). 
+Likewise Dermaptera has higher variance in chromosome number than Mantodea and Orthoptera (p-values < 0.05). 
+Finally, Orhoptera has lower variance in chromosome number than Phasmatodea (p-value < 0.05).
+Much of these differences in variance are obvious even when looking at the reduced phylogenetic dataset in \cref{fig:phyloplot}.
 
 \subsection{Rate inference}
 Though these differences in variance suggest some orders are evolving more quickly we must control for the phylogeny to draw any rigorous conclusions.
@@ -54,7 +43,6 @@ Though these differences in variance suggest some orders are evolving more quick
 We began with a base model that allows for fusions and fissions and compared this via a likelihood ratio test with a model that included polyploidy as well.
 We found that 77.6\% of our likelihood ratio tests supported an important role for polyploidy.
 For this reason all analyses were done with a model that had fusions, fissions, and polyploidy.
-% make all rates 3 digits after decimal
 In Blattodea we estimate a mean fusion rate of 0.128, a fission rate of 0.150, and a polyploidy rate of 0.003 (\cref{tab:HPD}).
 In contrast if we remove the subclade Isoptera from Blattodea then we find that parameter estimates increase to 0.420, 0.385, and 0.004 for fusions, fissions and polyploidy respectively.
 This is consistent with rate estimates on Isoptera in isolation, where we infer a mean fusion rate of 0.044, a fission rate of 0.063 and a polyploidy rate of 0.003.
@@ -62,8 +50,6 @@ In Mantodea we estimate a mean fusion rate of 0.142, a fission rate of 0.056, an
 Mantodea rate estimates also exhibited high uncertainty overlapping rate estimates in most orders for most parameters \cref{fig:rates}.
 In Phasmatodea we estimate a mean fusion rate of 0.47, a fission rate of 0.145, and a polyploidy rate of 0.039.
 The lowest rates we estimated were in Orthoptera where the fusion rate was 0.003 and the fission rate was 0.024. However we do find the polyploidy rate to be high with a mean rate of 0.101.
-
-\input{table3.tex}
 
 \subsection{Ancestral state reconstruction}
 In reporting ancestral chromosome number in each order we averaged probabilities across all 100 trees from the posterior distribution. 
@@ -81,7 +67,6 @@ In our dataset, we find 13 species which are parthenogenetic.
 All these species were within Phasmatodea.
 Therefore we tested whether the mode of reproduction is associated with chromosome number evolution. 
 For this purpose we redoubled our efforts to increase the number of species for this clade and inferred a second phylogeny (\cref{fig:phas.phylo}).
-% make a supp figure with states and chromsomes numbers (figure of Phasmatodea phylogeny).
 This increased our samples from 28, which we had in Polyneoptera data set, to 41 species. 
 We found that there is no significant difference in the rates chromosome fusion and fission between sexually and asexually reproducing species.
 However, we find that rates of polyploidy is significantly higher in asexually reproducing species than in sexually reproducing species (\cref{fig:phas.plot}).
