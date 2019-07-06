@@ -6,6 +6,8 @@ Our analyses have revealed that this clade originated from an XO ancestor and th
 In contrast to past findings \citep{ross2015} we see a rapid decline in the rate of chromosome evolution that coincides with the origin of eusocial Blattodea (Isoptera).
 In Phasmatodea we find that transitions in to parthenogenetic reproduction allow for high rate of polyploidy but no significant increase in rates of dysploidy.
 
+\subsubsection{Sex chromosomes and chromosomes number}
+
 Transition between sex chromosome systems from X0 to XY can occur through X chromosome autosome fusions or by sex chromosome turnover with fixation of the ancestral X as an a new autosome.
 Transitions via fusion will lead to a reduction in the total number of chromosomes while turnover should lead to an increase in the total number of chromosomes.
 The data that we have collected shows a clear pattern of reduced chromosome number in taxa with recent XO to XY transitions (\cref{tab:fusions}).
@@ -19,31 +21,70 @@ Our assembled data can also help us understand the fate of Y chromosomes.
 It has been suggested that Y chromosomes may be destined to decay and loss given enough time given the inevitability of mutation accumulation due to lack of recombination \citep{steinemann2005}.
 Alternatively they may be retained through cycles of rejuvenation or even transitions into alternative forms of meiosis \citep{blackmon2015bioessay}.
 In our inference of sex chromosome system evolution we performed stochastic mappings that allow us to estimate the rate of Y chromosome loss and the number of inferred losses in our dataset.
-The rate of Y chromosome gains and Y chromosome losses are are both approximately 0.002 (\cref{tab:simmap.summary}). % add ref supptable here
+The rate of Y chromosome gains and Y chromosome losses are are both approximately 0.002 (\cref{tab:simmap.summary}). 
 However, we find that Y chromosome gains are more common with a mean of 15.3 while losses are relatively rare with mean of 6.7.
-This pattern is intuitive when we consider that the ancestor of this group was likely XO and thus their has been relatively little time for the gain of Y chromosome to then be followed by its decay and loss.% make a supp table that has 95% credible interval for rates of XO to XY and XY to XO and # of transitions XO to XY and XY to XO
+This pattern is intuitive when we consider that the ancestor of this group was likely XO and thus their has been relatively little time for the gain of Y chromosome to then be followed by its decay and loss.
+
+\subsubsection{Eusociallity and chromosome number}
+
+In our analysis of Blattodea, we inferred a significantly lower rate of chromosome evolution in the subclade Isoptera than the rest of Blattodea (roaches).
+In the past it has been hypothesized that large rate differences for instance those seen among some mammal clades might be explained by differences in effective population size \citep{bush1977rapid}.
+Future work that examined effective population sizes of solitary Blattodea and eusocial Isoptera might reveal whether the observed rate differences in these lineages is consistent with this earlier hypothesis that large effective population size is associated with lower rates of chromosome evolution.
+It should be noted though that more recent phylogenetically informed analysis of over 1000 species of mammals showed that female meiotic drive may be a primary driver of chromosome number evolution in mammals \citep{blackmon2019meiotic}.
+Furthermore, the rate difference that we infer among the eusocial and solitary lineages of Blattodea are in the opposite direction of those observed between eusocial and solirary Hymenoptra \citep{ross2015}.
+This disconect even among insect clades points to the need for more taxonimcally diverse analyses that can disentangle the roll that life history and effective population size may have on the evolution of chromosome number.
+
+\subsubsection{Asexuallity and chromosome number}
+
+It is well known that parthenogenetic species commonly experience whole genome duplications \citep{lokki1980polyploidy}.
+Chromosome number is likely to change in many species largely through fusions and fissions of existing chromosomes \citep{sved2016}.
+However, chromsome number could also change due to simple aneuploidy events that fix in a population creating duplicate copies of one or more chromosomes.
+This may be rare since aneuploidy events can have striking effects on dosage which may lead to stoichiometric imbalances in gene networks with interacting products on different chromosomes.
+However, even in the absence of dosage problems individuals that have a duplicated chromosome may suffer reduced fitness.
+All genes that are present on the duplicated chromosome are then present in multiple copies and the expectation is to rapidly loose the vast majority of these duplicated genes.
+Whether the copy on the duplicated or the original chromosome is lost should be largely random.
+This should lead to a subset of genes being retained on both the ancestral and duplicated chromosome.
+When an individual from a population that has been through this process then mates with an individual with only a single copy of the ancestral chromosome the offspring will likely have lower fitness since it will segregate all chromosomes randomly and will produce many gametes that lack the proper complement of all genes in the genome. 
+However, asexually reproducing species should be immune from this potential problem since they cannot outcross to an individual with a different genome. 
+For this reason we hypothesized that asexual species should show increased rates of chromosome number gain, loss, and whole genome duplication.
+Phasmatodea offer a unique chance to understand how transition to asexuality impact chromosome number evolution.
+In our Phasmatodea dataset there are an estimated XXX transitions into parthenogenetic reproduction. 
+We found that parthenogenetic lineages had no significant difference in the rate of chromosome fusions or fissions \ref{fig:phas.plot} but parthenogenetic lineages did have increased rates of whole genome duplication.
+We interpret this result as evidence that dosage imbalance is of primary importance in chromosome number change and that simple aneuploidy events leading to duplication of single chromosomes are unlikely to be a common source of changes in chromosome number.
+
+
+
+
+
+In fact, it has been shown that polyploidy is much less frequent in animals that it is in plants (cite).
+However, we do find two orders, Phasmatodea and Orthoptera, to have higher rates of polyploidy.
+Phasmatodea is a special clade because this is the only clade of the studied clades where we find parthenogenetic species. 
+
+
+
+
+fusions vs fissions vs wgd
+
+
+closing
+
+
+
+
+
+
+
 
 Karyotype evolution, particularly at the autosomal level can occur due to various forces.
-It has been shown that female meiotic drive, where females preferentially segregate metacentric or telocentric chromosomes, is an important factor in the karyotype evolution in mammals (\citep{de2001female, blackmon2019meiotic}).
+
 In addition, epistatic interactions between genes in two different chromosomes, can also lead to fusions between autosomes. 
 On the other hand, the effective population size is also important in karyotype evolution.
 When the effective size of a population is low the chromosome number can be altered by drift. 
 Such changes would be highly deleterious or could be neutral. 
 In contrast, chromosome number change due to natural selection should occur in large populations and only when such changes are beneficial.
-In a study which looked at the speciation and karyotype evolution in mammals \citep{bush1977rapid}, the authors show that in species with low effective population size, the karyotype diversity is much higher.
-They also show that, in species with higher effective population size, the karyotype diversity was low.
 
-Karyotype evolution can also be influenced by life history traits. 
-In our analysis of order level chromosome evolution, we find that Isoptera, which was thought as a separate clade but now is classified as highly derived clade within Blattodea , shows low rates of chromosome evolution suggesting that transition into eusocial lifestyle shows a marked reduction in chromosome number evolution.
-However, the opposite pattern is seen in hymenoptera were eusocial insects show a marked increase in the chromosome evolution rate \citep{ross2015}.
 
-Although, most of our trees supported for an importance in polyploidy, we don'At find higher rates of polyploidy within these orders.
-In fact, it has been shown that polyploidy is much less frequent in animals that it is in plants (cite).
-However, we do find two orders, Phasmatodea and Orthoptera, to have higher rates of polyploidy.
-Phasmatodea is a special clade because this is the only clade of the studied clades where we find parthenogenetic species. 
-In our analysis of how reproductive mode influence chromosome number evolution we found that there is no significant difference in the rates of fusion and fission between the two reproductive modes, sexual and parthenogenetic. 
-However, we did find that the rate of polyploidy is much higher in parthenogenetic species than in sexually reproducing species. 
-This result is in line with what we see in insects where, polyploidy is commonly associated with parthenogenetic reproduction \citep{lokki1980polyploidy}.
-We think that it is because of dosage balance we see that there is no significant difference in the chromosome fusion and fission rates in both parthenogenetic and sexually reproducing species. 
+
+
 
 Overall our results suggests that chromosome evolution in the clade polyneoptera is highly idiosyncratic and likely impacted by variety of forces.
