@@ -5,7 +5,7 @@
 We downloaded all available chromosome data for the clade Polyneoptera from the Tree of Sex database \citep{blackmon2016,TOS2014}.
 To supplement this data we performed literature searches for each order in Polyneoptera.
 Briefly, we combined order names with the terms "cytogenetic", "cytotaxonomic", "karyotype", and "sex chromosome system". %HB: delete this comment once you have done this.
-For each species in our dataset we made an attempt to score three traits: chromosome number, sex chromosome system, and reproductive mode (sexual vs. asexual).
+For each species in our dataset we made an attempt to score three traits: chromosome number, SCS, and reproductive mode (sexual vs. asexual).
 In cases where a there were multiple records for a species that had different values we retained all reported values.
 This process yielded a final data set of 783 records 743 of these are unique with the remaining records representing species that have variability in one of the recorded traits. 
 
@@ -65,10 +65,10 @@ As the phylogenetic input we used the 100 trees sampled from the initial phyloge
 For each tree from our posterior distribution, we took the mean of each parameters estimate from the corresponding post burn-in portion of the ChromPlus analysis described above and supplied these to infer ancestral states in ChromEvol.
 We integrated the estimates from the analysis of all 100 trees for each order to generate an ancestral state estimate that accounts for uncertainty in phylogeny. 
 
-The estimate of ancestral states for sex chromosome systems was done using a Markov model in the function ACE in the R package APE \citep{Paradis2018}.
-We classified multi-XY sex chromosome system as XY which resulted in two states (XO and XY) for the ancestral states reconstruction of the sex chromosome system. 
+The estimate of ancestral states for SCSs was done using a Markov model in the function ACE in the R package APE \citep{Paradis2018}.
+We classified multi-XY SCS as XY which resulted in two states (XO and XY) for the ancestral states reconstruction of the SCS. 
 Our model allowed for transitions between X0 and XY to occur at unequal rates.
-To estimate the number of transitions in sex chromosome systems we created the same model and performed stochastic mappings in the R package phytools \citep{revell2012phytools}.
+To estimate the number of transitions in SCSs we created the same model and performed stochastic mappings in the R package phytools \citep{revell2012phytools}.
 Data and all R code for analyses are provided in a GitHub repository: https://github.com/Tsylvester8/Polyneoptera. %HB create a repo with all of this in it.
 %TP created the repo. Didn't add any files yet. 
 
