@@ -25,7 +25,7 @@ For the protein coding genes, We manually adjusted starting position of the alig
 Using the supermatrix function in the R package evobiR individual gene alignments were then concatenated into a supermatrix with 7380 sites \citep{blackmon2015evobir}.
 When there were more than one unit in the sequence data set for genus level matches, and when there were more than one sequence for a particular gene or region, we retained the longest sequence upon concatenation. If sequences were of equal length then we picked a sequence randomly.
 
-The presence of rouge taxa (taxa that have inconsistent placement in a set of phylogenetic trees) can produce unreliable rate inferences similar to that found in analyses of supertrees in \cite{rabosky2015b}.
+The presence of rouge taxa (taxa that have inconsistent placement in a set of phylogenetic trees) can produce unreliable rate inferences similar to that found in analyses of supertrees in \cite{aberer2012roguetaxa, rabosky2015b}.
 To identify the presence of rouge taxa, we generated 100 maximum likelihood rapid bootstrap trees using RAxML v 8.2.10 under CIPRES Science Gateway \citep{stamatakis2014raxml,miller2010cipres}.
 Using these trees we calculated the taxonomic instability index as implemented in Mesquite v 3.51 \citep{maddison2018mesquite}.
 When we examined taxonomic instability indices we found that a score of 4870 was an inflection point (\cref{fig:tax.index}).
@@ -43,7 +43,12 @@ The initial 50\% of each run was discarded as burn-in and 50 phylogenetic trees 
 \subsection{Modeling chromosome evolution}
 We used R packages diversitree \citep{fitzjohn2012} and chromePlus \citep{blackmon2019meiotic} to model the chromosome number evolution in a Bayesian framework.
 To get reliable estimates for the rates of chromosome number evolution we only analyzed the four orders with at least 20 representatives.
-We tested two versions of our model, a simple model with chromosome gains (fission) and losses (fusion) and a complex model which included gains, losses and polyploidy.
+We tested two versions of our model, a simple model with chromosome fission and losses fusion and a complex model which included fission, fusion and polyploidy.
+Although we use the terms fusion and fission for convenience it should be noted that these are simply changes (decreases or increases respectively) in the haploid number by one.
+For fusions or chromosome number decreases the likely mechanism on a chromosomal level is likely non-Robertsonian translocations with loss of some non-essential DNA.
+For fissions or chromosome number increases there are two likely mechanisms.
+First chromosome number may increase through the breakage of an existing chromosome followed by \textit{de novo} telomere generation \citep{harrington1991, tsujimoto1999}.
+Second an aneuploidy event could lead to the generation of a duplicate copy of a chromosome.
 Based on the likelihood ratio test results we used the complex model to estimates the rates of chromosome changes at the order level.
 
 To account for uncertainty in chromosome number (e.g., when we there were reports of multiple values for a tip in our phylogeny) we randomly sampled among the possible values.
