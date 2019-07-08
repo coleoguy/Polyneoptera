@@ -5,8 +5,8 @@ We downloaded all available chromosome data for the clade Polyneoptera from the 
 To supplement this data we performed literature searches for each order in Polyneoptera.
 Briefly, we combined order names with the terms "cytogenetic", "cytotaxonomic", "karyotype", and "sex chromosome system". %HB: delete this comment once you have done this.
 For each species in our dataset we made an attempt to score three traits: chromosome number, SCS, and reproductive mode (sexual vs. asexual).
-In cases where a there were multiple records for a species that had different values we retained all reported values.
-This process yielded a final data set of 783 records 743 of these are unique with the remaining records representing species that have variability in one of the recorded traits. 
+In cases where there were multiple records for a species that had different values we retained all reported values.
+This process yielded a final data set of 783 records 736 of these are unique with the remaining records representing species that have variability in one of the recorded traits. 
 
 \subsection{Phylogenetic data}
 We used PyPHLAWD to retrieve sequence clusters and used clusters which had at least 100 species for our analysis \citep{smith2018phyphlawd}. 
@@ -43,7 +43,7 @@ The initial 50\% of each run was discarded as burn-in and 50 phylogenetic trees 
 \subsection{Modeling chromosome evolution}
 We used R packages diversitree \citep{fitzjohn2012} and chromePlus \citep{blackmon2019meiotic} to model the chromosome number evolution in a Bayesian framework.
 To get reliable estimates for the rates of chromosome number evolution we only analyzed the four orders with at least 20 representatives.
-We tested two versions of our model, a simple model with chromosome gains (fission) and losses (fusion) and a complex model which included fusion, fission and polyploidy.
+We tested two versions of our model, a simple model with chromosome gains (fission) and losses (fusion) and a complex model which included gains, losses and polyploidy.
 Based on the likelihood ratio test results we used the complex model to estimates the rates of chromosome changes at the order level.
 
 To account for uncertainty in chromosome number (e.g., when we there were reports of multiple values for a tip in our phylogeny) we randomly sampled among the possible values.
