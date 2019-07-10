@@ -39,13 +39,12 @@ We conducted two independent runs, each for 100 million generations.
 Convergence of these two independent runs was evaluated using Tracer v 1.7 \citep{rambaut2018tracer}.
 
 For a follow on analysis we wanted to build a phylogeny for Phasmatodea that included more species from our trait dataset.
-To do this we followed the same procedure as described above but supplemented the sequence data from PyPHLAWD with additional data located using the PhyLoTA web server \citep{sanderson2008}.
+To do this we supplemented the sequence data from PyPHLAWD with additional data located using the PhyLoTA web server \citep{sanderson2008}.
 This increased our samples from 28 species, which we had in Polyneoptera data set, to 41 species. 
 This new dataset included three mitochondrial genes (16s, COI, COX2) and three nuclear genes (18s, 28s and H3).
 The new dataset consisted of 57\% missing data.
 We inferred time calibrated phylogenies as described above.
-
-The initial 50\% of each run was discarded as burn-in and 50 phylogenetic trees were randomly sampled from the post-burnin period of each run to construct a posterior distribution of 100 trees used for trait analyses described below.
+The initial 50\% of each MCMC run was discarded as burn-in and 50 phylogenetic trees were randomly sampled from the post-burnin period of each run to construct a posterior distribution of 100 trees used for trait analyses described below.
 
 \subsection{Modeling chromosome evolution}
 We used R packages diversitree \citep{fitzjohn2012} and chromePlus \citep{blackmon2019meiotic} to model chromosome number evolution in a Bayesian framework.
