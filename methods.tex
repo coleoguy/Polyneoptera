@@ -2,87 +2,87 @@
 
 \subsection{Chromosome data}
 We downloaded all available chromosome data for the clade Polyneoptera from the Tree of Sex database \citep{blackmon2016,TOS2014}.
-To supplement this data we performed literature searches for each order in Polyneoptera.
+To supplement this data, we performed literature searches for each order in Polyneoptera.
 Briefly, we combined order names with the terms "cytogenetic", "cytotaxonomic", "karyotype", and "sex chromosome system". %HB: delete this comment once you have done this.
-For each species in our dataset we made an attempt to score three traits: chromosome number, SCS, and reproductive mode (sexual vs. asexual).
-In cases where there were multiple records for a species that had different values we retained all reported values.
-This process yielded a final data set of 783 records 735 of these are unique with the remaining records representing species that have variability in one of the recorded traits. 
+For each species in our dataset, we made an attempt to score three traits: chromosome number, SCS, and reproductive mode (sexual vs. asexual).
+In cases where there were multiple records for a species that had different values, we retained all reported values.
+This process yielded a final dataset of 783 records, 735 of which are unique, with the remaining records representing species that have variability in one of the recorded traits. 
 
 \subsection{Phylogenetic data}
 We used PyPHLAWD to retrieve sequence clusters and used clusters which had at least 100 species for our analysis \citep{smith2018phyphlawd}. 
 These included three mitochondrial genes (COI, COX2 and ND4) and three nuclear regions (18s and two regions of the 28s gene). 
 We removed duplicate sequences and retained the longest example for each species using the function FastaFilter in the R package evobiR \citep{blackmon2015evobir}.
-To maximize the overlap between our trait and sequence data sets we first found all species level exact matches in both data sets.
+To maximize the overlap between our trait and sequence datasets we first found all species-level exact matches in both datasets.
 Next, we looked for genera level matches that lacked species level matches.
-For each of these genus level matches we retained the longest sequence for each locus from any species in the genus and used these sequences to act as a tip representing the genus rather than any single species. 
-This process of maximizing overlap between the two data sets created 57 exemplar taxa (genera tips).
+For each of these genus level matches, we retained the longest sequence for each locus from any species in the genus and used these sequences to act as a tip representing the genus rather than any single species. 
+This process of maximizing the overlap between the two datasets created 57 exemplar taxa (genera tips).
 
 We used MAFFT under default settings to align all sequences \citep{katoh2013mafft}.
-For the aligned RNA coding sequences, we used GBLOCKS to remove hyper variable regions \citep{castresana2000gblocks}. 
-When running GBLOCKS we used default settings with the exception of the allowed gap positions argument which was set to maximum. 
-For 18S sequence cluster we also set the minimum block length to 6 to retain a greater proportion of the alignment. 
-For the protein coding genes, We manually adjusted starting position of the alignments to maintain the reading frame. 
-Using the supermatrix function in the R package evobiR individual gene alignments were then concatenated into a supermatrix with 7380 sites \citep{blackmon2015evobir}.
+For the aligned RNA coding sequences, we used GBLOCKS to remove hypervariable regions \citep{castresana2000gblocks}. 
+When running GBLOCKS, we used default settings with the exception of the allowed gap positions argument which was set to maximum. 
+For the 18S sequence cluster, we also set the minimum block length to 6 to retain a greater proportion of the alignment. 
+For the protein-coding genes, we manually adjusted the starting position of the alignments to maintain the reading frame. 
+Using the supermatrix function in the R package evobiR, individual gene alignments were then concatenated into a supermatrix with 7380 sites \citep{blackmon2015evobir}.
 
-The presence of rouge taxa (taxa that have inconsistent placement in a set of phylogenetic trees) can produce unreliable rate inferences similar to that found in analyses of supertrees \citep{aberer2012roguetaxa, rabosky2015b}.
-To identify the presence of rouge taxa, we generated 100 maximum likelihood rapid bootstrap trees using RAxML v 8.2.10 implemented in CIPRES Science Gateway \citep{stamatakis2014raxml,miller2010cipres}.
-Using these trees we calculated the taxonomic instability index as implemented in Mesquite v 3.51 \citep{maddison2018mesquite}.
-When we examined taxonomic instability indices we found that a score of 4870 was an inflection point (\cref{fig:tax.index}).
+The presence of rogue taxa (taxa that have an inconsistent placement in a set of phylogenetic trees) can produce unreliable rate inferences similar to that found in analyses of supertrees \citep{aberer2012roguetaxa, rabosky2015b}.
+To identify the presence of rogue taxa, we generated 100 maximum likelihood rapid bootstrap trees using RAxML v 8.2.10 implemented in CIPRES Science Gateway \citep{stamatakis2014raxml,miller2010cipres}.
+Using these trees, we calculated the taxonomic instability index as implemented in Mesquite v 3.51 \citep{maddison2018mesquite}.
+When we examined taxonomic instability indices, we found that a score of 4870 was an inflexion point (\cref{fig:tax.index}).
 We identified 16 taxa whose taxonomic instability index was higher and removed them from subsequent analysis.
 Our final alignment contained 232 taxonomic units with 73\% missing data.
 
-We used BEAST v 2.5 \citep{bouckaert2014beast} to infer time calibrated phylogenies under a relaxed log normal clock, a birth-death model as the branching process, and GTR + G as the nucleotide substitution model.
+We used BEAST v 2.5 \citep{bouckaert2014beast} to infer time-calibrated phylogenies under a relaxed log normal clock, a birth-death model, and GTR + G as the nucleotide substitution model.
 We used previous estimates for the ages of seven nodes (\cref{tab:nodeconstraints}) in our phylogeny drawn from a previous study of divergence times across insects \citep{misof2014phylogenomics}.
-For each of these calibration points we used a normal distribution.
+For each of these calibration points, we used a normal distribution.
 The upper and lower bounds of the calibration points (95\textsuperscript{th} and 5\textsuperscript{th} percentiles respectively) were placed according to the confidence intervals as presented in \citet{misof2014phylogenomics}. 
 We conducted two independent runs, each for 100 million generations.
-Convergence of these two independent runs was evaluated using Tracer v 1.7 \citep{rambaut2018tracer}.
+The convergence of these two independent runs was evaluated using Tracer v 1.7 \citep{rambaut2018tracer}.
 
-For a follow on analysis we wanted to build a phylogeny for Phasmatodea that included more species from our trait dataset.
+The presence of parthenogenetic taxa in our dataset allowed us to ask the question of how mode of reproduction affect the chromosome number evolution.
+However, the parthenogenetic mode of reproduction is only present in Phasmatodea.
+Therefore we build a second phylogeny, for Phasmatodea, that included more species from our trait dataset.
 To do this we supplemented the sequence data from PyPHLAWD with additional data located using the PhyLoTA web server \citep{sanderson2008}.
-This increased our samples from 28 species, which we had in Polyneoptera data set, to 41 species. 
+This increased our samples from 28 species, which we had in Polyneoptera dataset, to 41 species. 
 This new dataset included three mitochondrial genes (16s, COI, COX2) and three nuclear genes (18s, 28s and H3).
-The new dataset consisted of 57\% missing data.
-We inferred time calibrated phylogenies as described above.
-The initial 50\% of each MCMC run was discarded as burn-in and 50 phylogenetic trees were randomly sampled from the post-burnin period of each run to construct a posterior distribution of 100 trees used for trait analyses described below.
+The new alignment consisted of 57\% missing data.
+We inferred time-calibrated phylogenies as described above.
+The initial 50\% of each MCMC run was discarded as burnin and 50 phylogenetic trees were randomly sampled from the post-burnin period of each run to construct a posterior distribution of 100 trees used for trait analyses described below.
 
 \subsection{Modeling chromosome evolution}
 We used R packages diversitree \citep{fitzjohn2012} and chromePlus \citep{blackmon2019meiotic} to model chromosome number evolution in a Bayesian framework.
-To get reliable estimates for the rates of chromosome number evolution we only analyzed the four orders with at least 20 representatives.
-We tested two versions of our model, a simple model with chromosome fission and fusion and a complex model which included fission, fusion and polyploidy.
-Although we use the terms fusion and fission for convenience it should be noted that these are simply changes (decreases and increases respectively) in the haploid number by one.
-For fusions or chromosome number decreases the likely mechanism on a chromosomal level is non-Robertsonian translocations with loss of some non-essential DNA.
-For fissions or chromosome number increases there are two likely mechanisms.
+To get reliable estimates for the rates of chromosome number evolution, we only analyzed the four orders with at least 20 representatives.
+We tested two versions of our model, a simple model with chromosome fission and fusion and a complex model which included fission, fusion, and polyploidy.
+Although we use the terms fusion and fission for convenience, it should be noted that these are simply changes (decreases and increases respectively) in the haploid number by one.
+For fusions or chromosome number decreases, the likely mechanism on a chromosomal level is non-Robertsonian translocations with loss of some non-essential DNA.
+For fissions or chromosome number increases, there are two likely mechanisms.
 First, chromosome number may increase through the breakage of an existing chromosome followed by \textit{de novo} telomere generation \citep{harrington1991, tsujimoto1999}.
 Second, an aneuploidy event could lead to the generation of a duplicate copy of a chromosome.
-Based on the likelihood ratio test results we used the complex model to estimates the rates of chromosome evolution.
+Based on the likelihood ratio test results, we used the complex model to estimate the rates of chromosome evolution.
 
-To account for uncertainty in chromosome number (e.g., when we there were reports of multiple values for a tip in our phylogeny) we randomly sampled among the possible values.
+To account for uncertainty in chromosome number (e.g., when there were reports of multiple values for a tip in our phylogeny), we randomly sampled among the possible values.
 This random sampling was repeated for each tree that we analyzed.
-To account for uncertainty in phylogeny we ran an MCMC of 1000 generations for each of the 100 trees drawn from the posterior distribution.
+To account for uncertainty in phylogeny, we ran an MCMC of 1000 generations for each of the 100 trees drawn from the posterior distribution.
 Inspection of the parameter estimates revealed that our MCMC runs converged by 50 generations in most cases.  
-We conservatively discarded the initial 25\% (250 states) as burn-in and randomly sampled 100 states from the post-burn-in portion of the run. 
+We conservatively discarded the initial 25\% (250 states) as burnin and randomly sampled 100 states from the post-burnin portion of the run. 
 This process yielded 10,000 point estimates that define the posterior distribution of the parameters in our model.
 We tested for differences in rates of chromosome evolution by comparing the 95\% credible interval of the posterior distribution for each parameter in our model.
 Rates were inferred with branch lengths transformed to make trees unit length.
-However, all rates reported have been back transformed so they represents transition rates in units of millions of years.
+However, all rates reported have been back transformed so they represent transition rates in units of millions of years.
 
-We also tested whether genome size as a proxy for repetitive content might explain the rate differences that we observed among orders.
+We also tested whether genome size as a proxy for repetitive content might explain the rate differences that we observed among orders \citep{kidwell2002transposable,bennetzen2005mechanisms}.
 Genome size data for all available species in Polyneoptera were downloaded from the animal genome size database \citep{gregory2019}.
 When multiple values for a single species were present the mean of each species was used.
 We then fit three linear models to test whether the mean genome size for an order predicted the mean rate estimate for chromosome gains, losses, and polyploidy. 
-Linear models were fit using the R function lm from base R.
+Linear models were fit using the R function lm from base R \citep{R-citation}.
 
 \subsection{Ancestral state reconstructions}
 We estimated the ancestral states of the chromosome number at the root of the four orders using ChromEvol v 2.0. \citep{glick2014chromevol, mayrose2009chromevol}.
-we used a fixed parameter model which included chromosome gains, losses, and whole genome duplication---matching the model used in ChromePlus.
-As the phylogenetic input we used the 100 trees sampled from the initial phylogenetic reconstruction. 
-For each tree from our posterior distribution, we took the mean of each parameters estimate from the corresponding post burn-in portion of the ChromPlus analysis described above and supplied these to infer ancestral states in ChromEvol.
+We used a fixed parameter model which included chromosome gains, losses, and whole genome duplication---matching the model used in ChromePlus.
+For each tree from our posterior distribution, we took the mean of each parameter estimate from the corresponding post-burnin portion of the ChromPlus analysis described above and supplied these to infer ancestral states in ChromEvol.
 We integrated the estimates from the analysis of all 100 trees for each order to generate an ancestral state estimate that accounts for uncertainty in phylogeny. 
 
 The estimate of ancestral states for SCSs was done using a Markov model in the function ACE in the R package APE \citep{Paradis2018}.
 We classified multi-XY SCS as XY which resulted in two states (XO and XY) for the ancestral states reconstruction of the SCS. 
 Our model allowed for transitions between XO and XY to occur at unequal rates.
-To estimate the number of transitions in SCSs we created the same model and performed stochastic mappings in the R package phytools \citep{revell2012phytools}.
+To estimate the number of transitions in SCSs, we created the same model and performed stochastic mappings in the R package phytools \citep{revell2012phytools}.
 Data and all R code for analyses are provided in a GitHub repository: https://github.com/Tsylvester8/Polyneoptera. 
-
